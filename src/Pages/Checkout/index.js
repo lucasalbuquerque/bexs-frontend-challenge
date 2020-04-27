@@ -1,6 +1,8 @@
 import React from 'react';
-import { Main, Left, Content } from './styles';
+import { Main, Content, Left, Right } from './styles';
 import Card from '../../Components/Card';
+
+import PaymentForm from '../../Components/PaymentForm'
 
 function Checkout(){
   return (
@@ -9,6 +11,9 @@ function Checkout(){
       <Left>
         <Card />
       </Left>
+      <Right>
+        <PaymentForm />
+      </Right>
       </Content>
     </Main>
   )
