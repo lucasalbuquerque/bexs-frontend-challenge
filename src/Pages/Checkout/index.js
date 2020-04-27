@@ -1,8 +1,15 @@
 import React from 'react';
+import { Main, Left, Content } from './styles';
 
 function Checkout(){
   return (
-    <h1>hello</h1>
+    <Main>
+      <Content className="container">
+      <Left>
+
+      </Left>
+      </Content>
+    </Main>
   )
 }
 
