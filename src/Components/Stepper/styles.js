@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
-export const Main = styled.ul `
+export const Main = styled.div `
   display: flex;
-  flex-direction: column;
 `
 
-export const Component = styled.div `
+export const Nav = styled.ul `
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 52px;
+`;
 
+export const Component = styled.div `
+  width: 100%;
 `
