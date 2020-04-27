@@ -9,7 +9,10 @@ export const Content = styled.div `
 `;
 
 export const Left = styled.div `
-  width: 352px;
+  width: 264px;
   height: 596px;
   background: #DE4B4B;
+  padding-left: 66px;
+  padding-right: 22px;
+  padding-top: 55px;
 `;
