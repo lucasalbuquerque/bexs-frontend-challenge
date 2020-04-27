@@ -5,7 +5,8 @@ function Stepper({ steps }){
   const [items, setItems] = useState(steps);
 
   const handleActive = useCallback(name => {
-    setItems(items.map(cur => cur.name === name ? { ...cur, status: true } : { ...cur, status: false }))
+    setItems(
+      items.map(cur => cur.name === name ? { ...cur, status: true } : { ...cur, status: false }))
   }, [items, setItems])
 
   return (
