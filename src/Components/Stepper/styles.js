@@ -8,6 +8,34 @@ export const Nav = styled.ul `
   display: flex;
   justify-content: space-between;
   margin-bottom: 52px;
+
+  li {
+    color: #DE4B4B;
+    font-size: 13px;
+    font-family: 'Verdana';
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .check {
+    border: 2px #DE4B4B solid;
+    border-radius: 20px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  .link .check {
+    background: #DE4B4B;
+    color: #ffffff;
+  }
+
 `;
 
 export const Component = styled.div `

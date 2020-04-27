@@ -14,7 +14,9 @@ function Stepper({ steps }){
     <Nav>
     {items && items.map((item,i) => {
     return (
-      <li key={i} onClick={() => handleActive(item.name)} data-id={i} className={item.status ? 'link' : undefined}>{item.name}</li>
+      <li key={i} onClick={() => handleActive(item.name)} data-id={i} className={item.status ? 'link' : undefined}>
+      <div class="check">{parseInt(i) + 1}</div> {item.name}
+      </li>
     )
     })}
     </Nav>
