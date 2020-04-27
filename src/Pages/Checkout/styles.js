@@ -7,7 +7,6 @@ export const Main = styled.div `
 export const Content = styled.div `
   background: #ffffff;
   display: flex;
-  background: red;
 `;
 
 export const Left = styled.div `
@@ -22,5 +21,7 @@ export const Left = styled.div `
 export const Right = styled.div `
   padding-top: 55px;
   padding-left: 168px;
+  padding-right: 65px;
+  width: 100%;
 `;
 
