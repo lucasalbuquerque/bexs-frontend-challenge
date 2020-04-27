@@ -26,7 +26,7 @@ function PaymentForm(){
     }
   })
 
-  return(
+  return (
   <Form onSubmit={formik.handleSubmit} noValidate>
 
     <Group>
@@ -70,7 +70,7 @@ function PaymentForm(){
     <Group>
     <Select {...formik.getFieldProps("installments")} autoComplete="Off" required
     className={parseInt(formik.values.installments) ? 'selectboxActive' : ''}
-    color={formik.touched.installments && formik.errors.installments ? '#EB5757' : ''}
+    color={formik.touched.installments && formik.errors.installments ? '#EB5757' : '#C9C9C9'}
     >
       <option value>Número de parcelas</option>
       <option value="1">1x de R$ 1.000,00 sem juros</option>

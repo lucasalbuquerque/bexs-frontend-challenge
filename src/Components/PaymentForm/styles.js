@@ -18,7 +18,7 @@ export const Form = styled.form `
 export const Group = styled.div `
   position: relative;
   width: 100%;
-  margin-bottom: 66px;
+  margin-bottom: 56px;
 
 input, select {
   font-family: Verdana;
@@ -52,7 +52,6 @@ select::-ms-expand {
 
 .selectboxActive {
   color: #3C3C3C;
-  border-bottom-color: #C9C9C9;
 }
 
 select option {
