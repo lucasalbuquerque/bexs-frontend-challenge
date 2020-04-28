@@ -1,38 +1,46 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Main, Nav, Component } from './styles';
 import Check from './assets/check.png';
 
 function Stepper({ steps }){
   const [items, setItems] = useState(steps);
+  const [activeItem, setActiveItem] = useState(0);
 
   const handleActive = useCallback(name => {
     setItems(
-      items.map(cur => cur.name === name ? { ...cur, status: true } : { ...cur, status: false }))
+      items.map(cur => cur.name === name ? { ...cur, current: true } : { ...cur, current: false }))
+  }, [items, setItems])
+
+  const handleActiveItem = useCallback((index) => {
+    if(index){
+      setActiveItem(index);
+    }
+  }, [activeItem, setActiveItem, items, setItems])
+
+  useEffect(() => {
+    console.log('items', items);
+    const index = items.findIndex(step => step.current) + 1;
+    console.log('index', index);
+    handleActiveItem(index);
   }, [items, setItems])
 
   return (
     <>
     <Nav data-testid="stepperNav">
     {items && items.map((item,i) => {
+    i++
+
     return (
-      <li key={i} onClick={() => handleActive(item.name)} data-id={i} className={item.status ? 'link' : undefined}>
-      <div className="check">{item.status ? (<img src={Check} />) : parseInt(i) + 1}</div> {item.name}
+      <li key={i} onClick={() => handleActive(item.name)} data-id={i} className={i < activeItem ? 'link' : undefined}>
+      <div className="check">{i < activeItem ? (<img src={Check} />) : i}</div> {item.name}
       </li>
     )
     })}
     </Nav>
     <Main>
-    {items && items.map((item, i) => {
-    return (
-      <>
-      {item.status &&
-        <Component key={i}>
-          {item.component}
-        </Component>
-      }
-      </>
-    )
-    })}
+    <Component>
+      {items && items.find(step => step.current).component}
+    </Component>
     </Main>
     </>
   )

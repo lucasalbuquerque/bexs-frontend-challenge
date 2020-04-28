@@ -7,9 +7,9 @@ describe('stepper component', () => {
   it('stepper should be have 3 items', async () => {
 
   const stepOptions = [
-    { name: 'Carrinho', component: <PaymentForm />, complete: true },
-    { name: 'Pagamento', component: <PaymentForm />, complete: false },
-    { name: 'Confirmação', component: <PaymentForm />, complete: false }
+    { name: 'Carrinho', component: <PaymentForm />, current: false },
+    { name: 'Pagamento', component: <PaymentForm />, current: true },
+    { name: 'Confirmação', component: <PaymentForm />, current: false }
   ]
 
   const { findByTestId } = render(<Stepper steps={stepOptions} />);
