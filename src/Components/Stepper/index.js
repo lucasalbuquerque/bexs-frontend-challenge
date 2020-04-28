@@ -18,9 +18,7 @@ function Stepper({ steps }){
   }, [activeItem, setActiveItem, items, setItems])
 
   useEffect(() => {
-    console.log('items', items);
     const index = items.findIndex(step => step.current) + 1;
-    console.log('index', index);
     handleActiveItem(index);
   }, [items, setItems])
 

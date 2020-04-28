@@ -27,7 +27,7 @@ function PaymentForm(){
       const data = api.user(formik.values);
       try {
         const post = await axios.post(api.DOMAIN, data);
-        console.log(post.data);
+        console.table(post.data);
         return
       }
       catch(err) {
