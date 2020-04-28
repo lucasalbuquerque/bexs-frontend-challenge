@@ -12,7 +12,7 @@ function Stepper({ steps }){
 
   return (
     <>
-    <Nav>
+    <Nav data-testid="stepperNav">
     {items && items.map((item,i) => {
     return (
       <li key={i} onClick={() => handleActive(item.name)} data-id={i} className={item.status ? 'link' : undefined}>
@@ -21,7 +21,7 @@ function Stepper({ steps }){
     )
     })}
     </Nav>
-    <Main>
+    <Main data-testid="stepperComponents">
     {items && items.map((item, i) => {
     return (
       <>
