@@ -11,7 +11,7 @@ function PaymentForm(){
   const formik = useFormik({
     initialValues: {
       number: undefined,
-      name: undefined,
+      name: '',
       expiry: undefined,
       cvv: undefined,
       installments: undefined
@@ -28,9 +28,11 @@ function PaymentForm(){
       try {
         const post = await axios.post(api.DOMAIN, data);
         console.log(post.data);
+        return
       }
       catch(err) {
         console.error(err);
+        return err
       }
     }
   })
@@ -62,6 +64,7 @@ function PaymentForm(){
     <Group>
     <MaskedInput mask="11/11" placeholder="" placeholderChar=" " {...formik.getFieldProps("expiry")} autoComplete="Off" required
     className={formik.errors.expiry && formik.touched.expiry ? 'error' : ''}
+    data-testid="expiry"
     />
     <span className="bar"></span>
     <label id="expiry">Validade</label>
@@ -71,6 +74,7 @@ function PaymentForm(){
     <Group>
     <MaskedInput mask="111" placeholderChar=" " {...formik.getFieldProps("cvv")} autoComplete="Off" required
     className={formik.errors.cvv && formik.touched.cvv ? 'error' : ''}
+    data-testid="cvv"
     />
     <span className="bar"></span>
     <label id="cvv">CVV</label>
@@ -82,6 +86,7 @@ function PaymentForm(){
     <Select {...formik.getFieldProps("installments")} autoComplete="Off" required
     className={parseInt(formik.values.installments) ? 'selectboxActive' : ''}
     color={formik.touched.installments && formik.errors.installments ? '#EB5757' : '#C9C9C9'}
+    data-testid="installments"
     >
       <option value>Número de parcelas</option>
       <option value="1">1x de R$ 1.000,00 sem juros</option>
@@ -93,7 +98,7 @@ function PaymentForm(){
     </Group>
 
     <Submit>
-    <input type="submit" value="continuar" />
+    <input type="submit" value="continuar" data-testid="submit" />
     </Submit>
 
   </Form>
