@@ -21,7 +21,7 @@ function Stepper({ steps }){
     )
     })}
     </Nav>
-    <Main data-testid="stepperComponents">
+    <Main>
     {items && items.map((item, i) => {
     return (
       <>

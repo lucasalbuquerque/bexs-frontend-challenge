@@ -107,8 +107,8 @@ small {
   color: #EB5757;
   font-family: Verdana;
   font-size: 13px;
-  position: relative;
-  top: 5px;
+  position: absolute;
+  margin-top: 5px;
 }
 
 .error {
