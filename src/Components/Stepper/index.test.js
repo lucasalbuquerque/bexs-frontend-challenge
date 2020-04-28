@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import Stepper from './index';
 import PaymentForm from '../PaymentForm';
 
-describe('Stepper component', () => {
+describe('stepper component', () => {
   it('stepper should be have 3 items', async () => {
 
   const stepOptions = [
@@ -20,5 +20,4 @@ describe('Stepper component', () => {
   expect(nav).toHaveTextContent(stepOptions[1].name);
   expect(nav).toHaveTextContent(stepOptions[2].name);
   })
-
 })
