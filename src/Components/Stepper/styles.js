@@ -6,7 +6,7 @@ export const Main = styled.div `
 
 export const Nav = styled.ul `
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 52px;
 
   li {
@@ -18,6 +18,17 @@ export const Nav = styled.ul `
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  li::after {
+    content: url(right.png);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 2px;
+  }
+
+  li:last-child::after {
+    content: none;
   }
 
   .check {

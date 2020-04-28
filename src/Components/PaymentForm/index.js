@@ -3,6 +3,8 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import MaskedInput from 'react-maskedinput';
 import { Form, Group, FieldGroup, Select, Submit } from './styles';
+import axios from 'axios';
+import * as api from '../../Services/api/index';
 
 function PaymentForm(){
 
@@ -21,8 +23,15 @@ function PaymentForm(){
       cvv: yup.string().required('Campo obrigatório!'),
       installments: yup.string().matches(/^[0-9]/, 'Campo obrigatório').required('Campo obrigatório!')
     }),
-    onSubmit: (values) => {
-      console.log(formik.values)
+    onSubmit: async () => {
+      const data = api.user(formik.values);
+      try {
+        const post = await axios.post(api.DOMAIN, data);
+        console.log(post.data);
+      }
+      catch(err) {
+        console.error(err);
+      }
     }
   })
 
@@ -39,7 +48,7 @@ function PaymentForm(){
     </Group>
 
     <Group>
-    <input type="text" name="name" maxLength="30" {...formik.getFieldProps("name")} autoComplete="Off" required
+    <input name="name" maxLength="30" {...formik.getFieldProps("name")} autoComplete="Off" required
     className={formik.errors.name && formik.touched.name ? 'error' : ''}
     />
     <span className="bar"></span>
