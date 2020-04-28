@@ -41,6 +41,7 @@ function PaymentForm(){
     <Group>
     <MaskedInput mask="1111 1111 1111 1111" placeholderChar=" " {...formik.getFieldProps("number")} autoComplete="Off" required
     className={formik.errors.number && formik.touched.number ? 'error' : ''}
+    data-testid="number"
     />
     <span className="bar"></span>
     <label id="number">Número do cartão</label>
@@ -48,8 +49,9 @@ function PaymentForm(){
     </Group>
 
     <Group>
-    <input name="name" maxLength="30" {...formik.getFieldProps("name")} autoComplete="Off" required
+    <input maxLength="30" {...formik.getFieldProps("name")} autoComplete="Off" required
     className={formik.errors.name && formik.touched.name ? 'error' : ''}
+    data-testid="name"
     />
     <span className="bar"></span>
     <label id="name">Nome (igual ao cartão)</label>
