@@ -1,9 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import { Router } from 'react-router-dom'
+import { createMemoryHistory } from 'history'
+import Checkout from './Pages/Checkout'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('full app rendering/navigating', () => {
+  const history = createMemoryHistory()
+  const { container, debug } = render(
+    <Router history={history}>
+      <Checkout />
+    </Router>
+  )
+  expect(container.innerHTML).toMatch('Adicione um novo cartão de crédito')
 });

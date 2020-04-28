@@ -10,6 +10,7 @@ export const Nav = styled.ul `
   margin-bottom: 52px;
 
   li {
+    cursor: pointer;
     color: #DE4B4B;
     font-size: 13px;
     font-family: 'Verdana';
@@ -31,6 +32,11 @@ export const Nav = styled.ul `
     font-weight: bold;
   }
 
+  .check img {
+    width: 13px;
+    transform: rotate(12deg);
+  }
+
   .link .check {
     background: #DE4B4B;
     color: #ffffff;
@@ -40,4 +46,8 @@ export const Nav = styled.ul `
 
 export const Component = styled.div `
   width: 100%;
+
+  div {
+    width: 100%;
+  }
 `
