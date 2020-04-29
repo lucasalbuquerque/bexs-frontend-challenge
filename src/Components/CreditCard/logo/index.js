@@ -9,9 +9,14 @@ function Logo({ type }){
     { type: flag.master, image: master }
   ]
 
-  const handleFilter = () => types.find(img => img.type == type).image
+  const handleFilter = () => {
+    const found = types.find(img => img.type == type);
+    if(found){
+      return types.find(img => img.type == type).image
+    }
+  }
 
-  if(type && type !== flag.def){
+  if(type && type !== flag.def && handleFilter()){
     return <img src={handleFilter()} width="70" />
   }
 
