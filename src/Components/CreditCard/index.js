@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import CreditCardContext from '../../State/CreditCard/context';
 import { Main, Fields } from './styles';
 import Logo from './logo';
 
-function CreditCard({ type, number, name, date, cvv, flip }) {
+function CreditCard() {
+
+  const { type, number, name, date, cvv, flip } = useContext(CreditCardContext).CreditCard;
 
   const defaultStyle = [
     { offset: '0', stopcolor: '#5a7589' },
@@ -21,14 +24,14 @@ function CreditCard({ type, number, name, date, cvv, flip }) {
             <Logo />
           </div>
           <div className="cardnumber">
-            <p>{number || '* * * * * * * * * * * * * * * *'}</p>
+            <p>{number}</p>
           </div>
           <div className="extrafields">
             <div className="name">
-              <p>{name ? name.toUpperCase() : 'NOME DO TITULAR'}</p>
+              <p>{name}</p>
             </div>
             <div className="date">
-              <p>{date || '00/00'}</p>
+              <p>{date}</p>
             </div>
           </div>
         </Fields>
@@ -116,7 +119,7 @@ function CreditCard({ type, number, name, date, cvv, flip }) {
       <div className="cardBack">
         <Fields>
           <div className="cvv">
-            <p>***</p>
+            <p>{cvv}</p>
           </div>
         </Fields>
         <svg width="366.913" height="247.564" viewBox="0 0 366.913 247.564">
