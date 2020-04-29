@@ -12,7 +12,7 @@ function Logo({ type }){
   const handleFilter = () => {
     const found = types.find(img => img.type == type);
     if(found){
-      return types.find(img => img.type == type).image
+      return found.image
     }
   }
 
