@@ -7,7 +7,7 @@ import Stepper from '../../Components/Stepper';
 function Checkout(){
 
   const stepOptions = [
-    { name: 'Carrinho', component: <Card />, current: false },
+    { name: 'Carrinho', component: <PaymentForm />, current: false },
     { name: 'Pagamento', component: <PaymentForm />, current: true },
     { name: 'Confirmação', component: <PaymentForm />, current: false }
   ]
