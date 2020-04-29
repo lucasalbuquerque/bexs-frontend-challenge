@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Main, Nav, Component } from './styles';
 import Check from './assets/check.png';
+import PropTypes from 'prop-types';
 
 function Stepper({ steps }){
   const [items, setItems] = useState(steps);
@@ -43,6 +44,10 @@ function Stepper({ steps }){
     </>
   )
 
+}
+
+Stepper.propTypes = {
+  steps: PropTypes.array.isRequired
 }
 
 export default Stepper
