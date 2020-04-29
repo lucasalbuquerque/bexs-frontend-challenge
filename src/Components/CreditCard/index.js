@@ -123,7 +123,7 @@ function CreditCard() {
       <div className="cardBack">
         <Fields>
           <div className="cvv">
-            <p>{cvv}</p>
+            <p>{cvv ? cvv.replace(/[0-9]/g, '*') : cvv}</p>
           </div>
         </Fields>
         <svg width="366.913" height="247.564" viewBox="0 0 366.913 247.564">

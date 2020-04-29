@@ -1,4 +1,5 @@
 import * as CreditCardTypes from './types';
+import foundCreditCardFlag from '../../Components/CreditCard/utils/creditcardvalidate'
 
 function CheckIfHaveNewValue(payloadType, stateType){
   if(payloadType && payloadType !== stateType){
@@ -12,7 +13,7 @@ function CreditCardReducer(state, action){
   const payload = action.payload.value;
 
   const data = {
-    type: CheckIfHaveNewValue(payload.type, state.type),
+    type: foundCreditCardFlag(CheckIfHaveNewValue(payload.number, state.number)),
     flip: payload.flip,
     number: CheckIfHaveNewValue(payload.number, state.number),
     name: CheckIfHaveNewValue(payload.name, state.name),
