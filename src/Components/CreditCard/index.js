@@ -1,27 +1,30 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import CreditCardContext from '../../State/CreditCard/context';
 import { Main, Fields } from './styles';
 import Logo from './logo';
+import CreditCardStyle from './utils/creditcardstyle';
 
 function CreditCard() {
 
   const { type, number, name, date, cvv, flip } = useContext(CreditCardContext).CreditCard;
 
-  const defaultStyle = [
-    { offset: '0', stopcolor: '#5a7589' },
-    { offset: '0.323', stopcolor: '#436175'},
-    { offset: '0.549', stopcolor: '#315266' },
-    { offset: '1', stopcolor: '#124768' }
-  ]
+  const [style, setStyle] = useState([]);
 
-  const [style, setStyle] = useState(defaultStyle);
+  const handleStyle = useCallback((type) => {
+    const findStyle = CreditCardStyle(type);
+    setStyle(findStyle);
+  }, [style, setStyle])
+
+  useEffect(() => {
+    handleStyle(type);
+  }, [type]);
 
   return (
     <Main className={flip ? 'card card-flip' : ''}>
       <div className="cardFront">
         <Fields>
           <div className="company">
-            <Logo />
+            <Logo type={type} />
           </div>
           <div className="cardnumber">
             <p>{number}</p>

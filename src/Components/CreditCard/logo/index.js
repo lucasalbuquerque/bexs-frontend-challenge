@@ -1,8 +1,21 @@
 import React from 'react';
 import visa from './assets/visa.png';
+import master from './assets/master.png';
+import * as flag from '../utils/types';
 
-function Logo(){
-  return <img src={visa} width="70" />
+function Logo({ type }){
+  const types = [
+    { type: flag.visa, image: visa },
+    { type: flag.master, image: master }
+  ]
+
+  const handleFilter = () => types.find(img => img.type == type).image
+
+  if(type && type !== flag.def){
+    return <img src={handleFilter()} width="70" />
+  }
+
+  return <></>
 }
 
 export default Logo
