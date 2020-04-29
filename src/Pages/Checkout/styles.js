@@ -31,6 +31,7 @@ export const Left = styled.div `
     width: 80%;
     height: 184px;
     margin-bottom: 35px;
+    padding-top: 100px;
   }
 
 `;

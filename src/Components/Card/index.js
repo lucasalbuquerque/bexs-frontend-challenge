@@ -1,6 +1,6 @@
 import React from 'react';
 import iconCard from './assets/icon-card.png';
-import iconLeft from './assets/left.png';
+import iconLeft from '../../Assets/left.png';
 import { Area, Navigation } from './style';
 import CreditCard from '../CreditCard';
 

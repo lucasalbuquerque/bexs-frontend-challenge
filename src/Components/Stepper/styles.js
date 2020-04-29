@@ -53,11 +53,28 @@ export const Nav = styled.ul `
     color: #ffffff;
   }
 
-
-  @media(max-width: 600px){
-    display: none;
+  .control {
+    cursor: pointer;
   }
 
+  @media(max-width:600px){
+    width: 95%;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-family: 'Verdana';
+      width: 100%;
+      text-align: center;
+    }
+  }
 `;
 
 export const Component = styled.div `

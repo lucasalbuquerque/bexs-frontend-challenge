@@ -14,6 +14,15 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     outline: none;
+    --webkit-appearance: none;
+  }
+
+  .desktop {
+    display: flex;
+  }
+
+  .mobile {
+    display: none;
   }
 
   .container {
@@ -34,10 +43,19 @@ const GlobalStyle = createGlobalStyle`
     body {
       background: #FFFFFF;
     }
+
     .container {
       width: 100%;
       display: flex;
       flex-direction: column;
+    }
+
+    .desktop {
+      display: none;
+    }
+
+    .mobile {
+      display: flex;
     }
   }
 
