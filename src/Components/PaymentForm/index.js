@@ -65,7 +65,7 @@ function PaymentForm(){
     </Group>
 
     <Group>
-    <input maxLength="30" {...formik.getFieldProps("name")} autoComplete="Off" required
+    <input maxLength="28" {...formik.getFieldProps("name")} autoComplete="Off" required
     className={formik.errors.name && formik.touched.name ? 'error' : ''}
     data-testid="name"
     />
