@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
 export const Main = styled.div`
-  transition: transform 0.8s;
-	perspective: 1000px;
-	width: 365px;
-	height: 224px;
 
-  :hover {
+  .card {
+    transition: transform 0.8s;
+    perspective: 1000px;
+    width: 365px;
+    height: 224px;
+  }
+
+  .card-flip {
     transform: rotateY(180deg);
     transform-style: preserve-3d;
     transition: transform 0.8s;

@@ -1,16 +1,34 @@
 import * as CreditCardTypes from './types';
 
+function CheckIfHaveNewValue(payloadType, stateType){
+  if(payloadType && payloadType !== stateType){
+    return payloadType
+  }
+  return stateType
+}
+
 function CreditCardReducer(state, action){
 
-    console.log('state', state);
-    console.log('action', action);
+  const payload = action.payload.value;
 
-    switch(action.type){
-        case CreditCardTypes.SEND:
-            return state;
-        default:
-            throw new Error();
-    }
+  const data = {
+    type: CheckIfHaveNewValue(payload.type, state.type),
+    flip: payload.flip,
+    number: CheckIfHaveNewValue(payload.number, state.number),
+    name: CheckIfHaveNewValue(payload.name, state.name),
+    expiry: CheckIfHaveNewValue(payload.expiry, state.expiry),
+    cvv: CheckIfHaveNewValue(payload.cvv, state.cvv)
+  }
+
+  if(!action.payload)
+  return state
+
+  switch(action.type){
+    case CreditCardTypes.SEND:
+      return data;
+    default:
+      throw new Error();
+  }
 }
 
 export default CreditCardReducer

@@ -6,7 +6,7 @@ import CreditCardStyle from './utils/creditcardstyle';
 
 function CreditCard() {
 
-  const { type, number, name, date, cvv, flip } = useContext(CreditCardContext).CreditCard;
+  const { type, number, name, expiry, cvv, flip } = useContext(CreditCardContext).CreditCard;
 
   const [style, setStyle] = useState([]);
 
@@ -20,7 +20,8 @@ function CreditCard() {
   }, [type]);
 
   return (
-    <Main className={flip ? 'card card-flip' : ''}>
+    <Main>
+      <div className={flip ? 'card card-flip' : 'card'}>
       <div className="cardFront">
         <Fields>
           <div className="company">
@@ -34,7 +35,7 @@ function CreditCard() {
               <p>{name}</p>
             </div>
             <div className="date">
-              <p>{date}</p>
+              <p>{expiry}</p>
             </div>
           </div>
         </Fields>
@@ -201,6 +202,7 @@ function CreditCard() {
           </g>
         </svg>
 
+      </div>
       </div>
     </Main>
   )

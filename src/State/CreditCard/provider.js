@@ -9,7 +9,7 @@ function Provider({ children }){
     flip: false,
     number: '* * * * * * * * * * * * * * * *',
     name: 'NOME DO TITULAR',
-    date: '00/00',
+    expiry: '00/00',
     cvv: '***'
   }
 

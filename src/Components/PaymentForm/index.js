@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect, useContext, useCallback } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import MaskedInput from 'react-maskedinput';
 import { Form, Group, FieldGroup, Select, Submit } from './styles';
 import axios from 'axios';
 import * as api from '../../Services/api/index';
+import CreditCardContext from '../../State/CreditCard/context'
+import * as CreditCardActions from '../../State/CreditCard/actions';
 
 function PaymentForm(){
+  const { setCreditCard } = useContext(CreditCardContext);
 
   const formik = useFormik({
     initialValues: {
@@ -36,6 +39,17 @@ function PaymentForm(){
       }
     }
   })
+
+  const handleFlip = useCallback((v) => {
+    const value = { ...formik.values, flip: v };
+    setCreditCard(CreditCardActions.send(value));
+    return
+  }, [])
+
+  useEffect(() => {
+    const value = { ...formik.values, flip: formik.values.cvv ? true : false };
+    setCreditCard(CreditCardActions.send(value));
+  }, [formik.values]);
 
   return (
   <Form onSubmit={formik.handleSubmit} noValidate>
@@ -75,6 +89,8 @@ function PaymentForm(){
     <MaskedInput mask="111" placeholderChar=" " {...formik.getFieldProps("cvv")} autoComplete="Off" required
     className={formik.errors.cvv && formik.touched.cvv ? 'error' : ''}
     data-testid="cvv"
+    onClick={() => handleFlip(true)}
+    onBlur={() => handleFlip(false)}
     />
     <span className="bar"></span>
     <label id="cvv">CVV</label>
