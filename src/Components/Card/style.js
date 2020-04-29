@@ -10,7 +10,7 @@ export const Navigation = styled.div `
     margin-right: 16px;
   }
 
-    h2 {
+  h2 {
     font-size: 13px;
     color: #FFFFFF;
     font-weight: 200;

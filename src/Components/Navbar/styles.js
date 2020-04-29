@@ -8,7 +8,7 @@ export const Header = styled.header `
   padding-bottom: 24px;
 
   img {
-  height: 42px;
+    height: 42px;
   }
 `;
 
