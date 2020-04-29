@@ -16,11 +16,18 @@ export const Navigation = styled.div `
     font-weight: 200;
     font-family: Verdana;
   }
+
+  @media(max-width: 600px){
+    display: none;
+  }
 `;
 
 export const Area = styled.div `
   display: flex;
-  margin-bottom: 30px;
+  width: 265px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+
 
   h3 {
     text-align: left;
@@ -28,5 +35,19 @@ export const Area = styled.div `
     letter-spacing: -0.01px;
     color: #FFFFFF;
     margin-left: 15px;
+  }
+
+  @media(max-width: 600px){
+    width: 220px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    img {
+      height: 40px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
   }
 `;

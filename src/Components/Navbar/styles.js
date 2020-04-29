@@ -10,6 +10,11 @@ export const Header = styled.header `
   img {
     height: 42px;
   }
+
+  @media(max-width:600px){
+    display: none;
+  }
+
 `;
 
 export const Nav = styled.nav `

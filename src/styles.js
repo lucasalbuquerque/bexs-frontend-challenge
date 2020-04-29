@@ -30,6 +30,17 @@ const GlobalStyle = createGlobalStyle`
     url(${SFProTextRegularTtf}) format("truetype");
   }
 
+  @media(max-width: 600px){
+    body {
+      background: #FFFFFF;
+    }
+    .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
 `;
 
 export default GlobalStyle

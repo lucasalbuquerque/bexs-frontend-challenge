@@ -53,6 +53,11 @@ export const Nav = styled.ul `
     color: #ffffff;
   }
 
+
+  @media(max-width: 600px){
+    display: none;
+  }
+
 `;
 
 export const Component = styled.div `

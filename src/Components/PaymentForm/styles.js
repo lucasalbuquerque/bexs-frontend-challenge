@@ -14,6 +14,17 @@ export const Form = styled.form `
     font-family: 'SF Pro Text Regular';
   }
 
+  @media(max-width:600px){
+    width: auto;
+    padding-left: 45px;
+    padding-right: 45px;
+
+    input[type=submit] {
+      width: 100%;
+    }
+  }
+
+
 `;
 
 export const Group = styled.div `
@@ -114,6 +125,10 @@ export const Group = styled.div `
 
   .error {
     border-color: #EB5757;
+  }
+
+  @media(max-width: 600px){
+    margin-bottom: 33px;
   }
 
 `;

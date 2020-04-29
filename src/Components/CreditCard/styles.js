@@ -27,6 +27,19 @@ export const Main = styled.div`
     transform: rotateY(180deg);
   }
 
+  @media(max-width: 600px){
+
+    .card {
+      width: 100%;
+      height: 172px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   /*svg classes*/
   .a,
   .g {
@@ -140,5 +153,57 @@ export const Fields = styled.div`
     letter-spacing: 5px;
     color: #3C3C3C;
     font-family: 'SF Pro Text Regular';
+  }
+
+  @media(max-width: 600px){
+    .cardnumber {
+      width: 98%;
+    }
+
+    .cardnumber p {
+      font-size: 25px;
+      overflow: hidden;
+      height: 35px;
+    }
+
+    .extrafields * {
+      font-size: 12px;
+    }
+
+    .company {
+      top: 20px;
+      position: relative;
+    }
+
+    .company img {
+      width: 53px;
+    }
+
+  }
+
+  @media(max-width: 325px){
+    .cardnumber {
+      width: 95%;
+    }
+
+    .company {
+      top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .company img {
+      width: 35px;
+    }
+
+    .cardnumber p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      height: 25px;
+    }
+
+    .extrafields {
+      margin-top: 0px;
+    }
   }
 `;
