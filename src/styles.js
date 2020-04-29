@@ -1,5 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
+import SFProTextRegularEot from './Fonts/1c45e28f8e86cc89876f003b953cc3e9.eot';
+import SFProTextRegularWoff from './Fonts/1c45e28f8e86cc89876f003b953cc3e9.woff';
+import SFProTextRegularWoff2 from './Fonts/1c45e28f8e86cc89876f003b953cc3e9.woff2';
+import SFProTextRegularTtf from './Fonts/1c45e28f8e86cc89876f003b953cc3e9.ttf';
+
 const GlobalStyle = createGlobalStyle`
   body {
     background: #F7F7F7;
@@ -15,6 +20,16 @@ const GlobalStyle = createGlobalStyle`
     width: 1024px;
     margin: 0 auto;
   }
+
+  @font-face {
+    font-family: "SF Pro Text Regular";
+    src: url(${SFProTextRegularEot}); /* IE9*/
+    src: url(${SFProTextRegularEot}?#iefix) format("embedded-opentype"), /* IE6-IE8 */
+    url(${SFProTextRegularWoff2}) format("woff2"), /* chrome、firefox */
+    url(${SFProTextRegularWoff}) format("woff"), /* chrome、firefox */
+    url(${SFProTextRegularTtf}) format("truetype");
+  }
+
 `;
 
 export default GlobalStyle

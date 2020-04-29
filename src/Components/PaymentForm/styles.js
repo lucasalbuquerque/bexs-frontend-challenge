@@ -11,6 +11,7 @@ export const Form = styled.form `
     background: #DE4B4B 0% 0% no-repeat padding-box;
     width: 246px;
     height: 51px;
+    font-family: 'SF Pro Text Regular';
   }
 
 `;
