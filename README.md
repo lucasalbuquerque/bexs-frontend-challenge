@@ -1,6 +1,6 @@
 ## Bexs Front-end Challenge
 * Layout developed: https://xd.adobe.com/spec/9c4a9206-ac61-4050-796d-89c00fb79e91-ea7b
-* Made with <a href="https://reactjs.org/" target="_blank">React</a>
+* Made with <a href="https://reactjs.org/">React</a>
 
 ## CreditCard Component and Stepper Component
 
@@ -12,7 +12,7 @@ If you want deploy with CI/CD at <a href="https://azure.microsoft.com/">Azure</a
 
 I wrote a article about Continuous Integration and Continuous Delivery in Medium, i will be very happy if you read :)
 
-<a href="https://medium.com/@lucasalbuquerquejs/ci-cd-para-desenvolvedore-a-s-front-end-com-azure-devops-conceito-e-implementa%C3%A7%C3%A3o"  target="_blank">CI/CD para Desenvolvedore(a)s Front-end com Azure DevOps — Conceito e Implementação</a>
+<a href="https://medium.com/@lucasalbuquerquejs/ci-cd-para-desenvolvedore-a-s-front-end-com-azure-devops-conceito-e-implementa%C3%A7%C3%A3o-a832b120762f">CI/CD para Desenvolvedore(a)s Front-end com Azure DevOps — Conceito e Implementação</a>
 
 ## Available Scripts
 
