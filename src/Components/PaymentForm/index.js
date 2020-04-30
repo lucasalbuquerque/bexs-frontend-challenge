@@ -7,7 +7,6 @@ import axios from 'axios';
 import * as api from '../../Services/api/index';
 import CreditCardContext from '../../State/CreditCard/context'
 import * as CreditCardActions from '../../State/CreditCard/actions';
-import Tooltip from '../Tooltip'
 import iconTooltip from './Assets/tooltip.png';
 
 function PaymentForm(){
@@ -101,6 +100,7 @@ function PaymentForm(){
     />
     <span className="bar"></span>
     <label id="cvv">CVV <img src={iconTooltip} /></label>
+    <span class="tooltiptext">O CVV é o código de segurança do seu cartão</span>
     {formik.touched.cvv ? (<small>{formik.errors.cvv}</small>) : null}
     </Group>
     </FieldGroup>

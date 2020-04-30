@@ -31,40 +31,30 @@ export const Group = styled.div `
   position: relative;
   width: 100%;
   margin-bottom: 56px;
-
-  input:focus ~ .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-  }
+  display: inline-block;
 
   .tooltiptext {
     visibility: hidden;
     background-color: #DE4B4B;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
+    border-radius: 4px;
     position: absolute;
     z-index: 1;
-    bottom: 125%;
+    padding: 5px;
+    margin-top : 2px;
     opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 11px;
-    padding: 10px;
+    transition: opacity 0.5s;
+    font-family: 'SF Pro Text Regular';
+    font-size: 12px;
+    color: #ffffff;
   }
 
-  .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #DE4B4B transparent transparent transparent;
+  :hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
   }
 
   input, select {
-    font-family: Verdana;
+    font-family: 'Verdana';
     font-size: 17px;
     padding: 10px 0px 10px 0px;
     display: block;
