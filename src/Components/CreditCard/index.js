@@ -32,7 +32,7 @@ function CreditCard() {
           </div>
           <div className="extrafields">
             <div className="name">
-              <p>{name}</p>
+              <p>{name.toUpperCase() || 'NOME DO TITULAR'}</p>
             </div>
             <div className="date">
               <p>{expiry}</p>

@@ -48,12 +48,16 @@ function PaymentForm(){
   }, [formik.values, formik])
 
   useEffect(() => {
-    //console.log('formik values', formik.values);
     if(formik.values){
       const value = { ...formik.values };
       setCreditCard(CreditCardActions.send(value));
     }
   }, [formik.values]);
+
+  useEffect(() => {
+    const value = { ...formik.values, flip: formik.values.cvv ? true : false };
+    setCreditCard(CreditCardActions.send(value));
+  }, [formik.values.cvv]);
 
   return (
   <Form onSubmit={formik.handleSubmit} noValidate>
@@ -70,7 +74,7 @@ function PaymentForm(){
     </Group>
 
     <Group>
-    <input maxLength="28" {...formik.getFieldProps("name")} autoComplete="Off" required
+    <input maxLength="24" {...formik.getFieldProps("name")} autoComplete="Off" required
     className={formik.errors.name && formik.touched.name ? 'error' : ''}
     data-testid="name"
     onClick={() => handleFlip(false)}
