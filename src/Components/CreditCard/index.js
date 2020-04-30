@@ -28,7 +28,7 @@ function CreditCard() {
             <Logo type={type} />
           </div>
           <div className="cardnumber">
-            <p>{number}</p>
+            <p>{number || '**** **** **** ****'}</p>
           </div>
           <div className="extrafields">
             <div className="name">

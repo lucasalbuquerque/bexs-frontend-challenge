@@ -2,7 +2,7 @@ import * as CreditCardTypes from './types';
 import foundCreditCardFlag from '../../Components/CreditCard/utils/creditcardvalidate'
 
 function CheckIfHaveNewValue(payloadType, stateType){
-  if(payloadType && payloadType !== stateType){
+  if(payloadType != undefined && payloadType !== stateType){
     return payloadType
   }
   return stateType

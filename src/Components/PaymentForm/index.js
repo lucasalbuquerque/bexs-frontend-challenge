@@ -45,11 +45,14 @@ function PaymentForm(){
     const value = { ...formik.values, flip: v };
     setCreditCard(CreditCardActions.send(value));
     return
-  }, [formik.touched])
+  }, [formik.values, formik])
 
   useEffect(() => {
-    const value = { ...formik.values, flip: formik.values.cvv ? true : false };
-    setCreditCard(CreditCardActions.send(value));
+    //console.log('formik values', formik.values);
+    if(formik.values){
+      const value = { ...formik.values };
+      setCreditCard(CreditCardActions.send(value));
+    }
   }, [formik.values]);
 
   return (
