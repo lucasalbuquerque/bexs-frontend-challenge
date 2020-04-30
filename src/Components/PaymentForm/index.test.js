@@ -3,13 +3,13 @@ import { render, fireEvent, wait } from '@testing-library/react';
 import PaymentForm from './index'
 import axiosMock from 'axios';
 import * as api from '../../Services/api';
-
+import CreditCardContext from '../../State/CreditCard/provider';
 import { act } from "react-dom/test-utils";
 
 describe('payment form component test', () => {
   it('should fill payment form and send data to api', async () => {
 
-    const { getByTestId, debug } = render(<PaymentForm />);
+    const { getByTestId, debug } = render(<CreditCardContext><PaymentForm /></CreditCardContext>);
 
     const fields = api.sendData('4111 1111 1111 1111', 'Mauro Albuquerque', '12/24', '123', '2')
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Stepper from './index';
 import PaymentForm from '../PaymentForm';
+import CreditCardContext from '../../State/CreditCard/provider';
 
 describe('stepper component', () => {
   it('stepper should be have 3 items', async () => {
@@ -12,7 +13,7 @@ describe('stepper component', () => {
     { id: 3, name: 'Confirmação', component: <PaymentForm />, current: false }
   ]
 
-  const { findByTestId } = render(<Stepper steps={stepOptions} />);
+  const { findByTestId } = render(<CreditCardContext><Stepper steps={stepOptions} /></CreditCardContext>);
 
   const nav = await findByTestId('stepperNav');
 

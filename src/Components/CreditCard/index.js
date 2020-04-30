@@ -20,7 +20,7 @@ function CreditCard() {
   }, [type]);
 
   return (
-    <Main>
+    <Main data-testeid="creditcard">
       <div className={flip ? 'card card-flip' : 'card'}>
       <div className="cardFront">
         <Fields>
