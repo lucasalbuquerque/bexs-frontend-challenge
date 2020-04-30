@@ -42,7 +42,6 @@ function PaymentForm(){
   })
 
   const handleFlip = useCallback((v) => {
-    formik.touched = { ...formik.touched, cvv: true };
     const value = { ...formik.values, flip: v };
     setCreditCard(CreditCardActions.send(value));
     return
@@ -53,11 +52,6 @@ function PaymentForm(){
     setCreditCard(CreditCardActions.send(value));
   }, [formik.values]);
 
-  useEffect(() => {
-    if(formik.touched.cvv)
-    handleFlip(false)
-  }, [formik.touched]);
-
   return (
   <Form onSubmit={formik.handleSubmit} noValidate>
 
@@ -65,6 +59,7 @@ function PaymentForm(){
     <MaskedInput mask="1111 1111 1111 1111" placeholderChar=" " {...formik.getFieldProps("number")} autoComplete="Off" required
     className={formik.errors.number && formik.touched.number ? 'error' : ''}
     data-testid="number"
+    onClick={() => handleFlip(false)}
     />
     <span className="bar"></span>
     <label id="number">Número do cartão</label>
@@ -75,6 +70,7 @@ function PaymentForm(){
     <input maxLength="28" {...formik.getFieldProps("name")} autoComplete="Off" required
     className={formik.errors.name && formik.touched.name ? 'error' : ''}
     data-testid="name"
+    onClick={() => handleFlip(false)}
     />
     <span className="bar"></span>
     <label id="name">Nome (igual ao cartão)</label>
@@ -86,6 +82,7 @@ function PaymentForm(){
     <MaskedInput mask="11/11" placeholder="" placeholderChar=" " {...formik.getFieldProps("expiry")} autoComplete="Off" required
     className={formik.errors.expiry && formik.touched.expiry ? 'error' : ''}
     data-testid="expiry"
+    onClick={() => handleFlip(false)}
     />
     <span className="bar"></span>
     <label id="expiry">Validade</label>
@@ -110,6 +107,7 @@ function PaymentForm(){
     className={parseInt(formik.values.installments) ? 'selectboxActive' : ''}
     color={formik.touched.installments && formik.errors.installments ? '#EB5757' : '#C9C9C9'}
     data-testid="installments"
+    onClick={() => handleFlip(false)}
     >
       <option value>Número de parcelas</option>
       <option value="1">1x de R$ 1.000,00 sem juros</option>

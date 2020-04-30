@@ -15,7 +15,6 @@ const foundCreditCardFlag = (value) => {
   } else if(amexRegex.test(formattedValue)) {
     return flag.amex;
   } else if(discoverRegex.test(formattedValue)) {
-    console.log("discoooooooooveer");
     return flag.discover;
   }
   return flag.def;
