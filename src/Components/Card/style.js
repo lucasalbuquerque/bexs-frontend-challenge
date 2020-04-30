@@ -26,7 +26,7 @@ export const Area = styled.div `
   display: flex;
   width: 265px;
   margin: 0 auto;
-  margin-bottom: 16px;
+  margin-bottom: 30px;
 
 
   h3 {

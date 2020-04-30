@@ -93,7 +93,7 @@ function PaymentForm(){
     onBlur={() => handleFlip(false)}
     />
     <span className="bar"></span>
-    <label id="cvv">CVV</label>
+    <label id="cvv">CVV <span class="tooltiptext">Tooltip text</span></label>
     {formik.touched.cvv ? (<small>{formik.errors.cvv}</small>) : null}
     </Group>
     </FieldGroup>
