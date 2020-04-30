@@ -17,6 +17,11 @@ const CreditCardStyle = (option) => {
       { offset: '0.200', stopcolor: '#108168' },
       { offset: '1', stopcolor: '#108168' }
     ],
+    'DISCOVER': () => [
+      { offset: '0', stopcolor: '#86B8CF' },
+      { offset: '0.323', stopcolor: '#86B8CF' },
+      { offset: '0.549', stopcolor: '#86B8CF' }
+    ],
     'DEFAULT': () => [
       { offset: '0', stopcolor: '#bfbfbf'},
       { offset: '0.337', stopcolor: '#a8a8a8'},

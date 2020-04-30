@@ -100,7 +100,7 @@ function PaymentForm(){
     />
     <span className="bar"></span>
     <label id="cvv">CVV <img src={iconTooltip} /></label>
-    <span class="tooltiptext">O CVV é o código de segurança do seu cartão</span>
+    <span className="tooltiptext">O CVV é o código de segurança do seu cartão</span>
     {formik.touched.cvv ? (<small>{formik.errors.cvv}</small>) : null}
     </Group>
     </FieldGroup>

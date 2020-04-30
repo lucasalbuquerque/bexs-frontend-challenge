@@ -2,13 +2,15 @@ import React from 'react';
 import visa from './assets/visa.png';
 import master from './assets/master.png';
 import amex from './assets/amex.png';
+import discover from './assets/discover.png';
 import * as flag from '../utils/types';
 
 function Logo({ type }){
   const types = [
     { type: flag.visa, image: visa },
     { type: flag.master, image: master },
-    { type: flag.amex, image: amex }
+    { type: flag.amex, image: amex },
+    { type: flag.discover, image: discover }
   ]
 
   const handleFilter = () => {
