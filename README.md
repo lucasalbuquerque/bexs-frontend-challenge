@@ -41,7 +41,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `how to see build project?`
+### `how to see the builded project?`
 * Install <a href="#">live-server</a>
 * Go to build directory
 * Run: npx live-server
