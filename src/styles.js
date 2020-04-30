@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: "SF Pro Text Regular";
+    font-family: 'SF Pro Text Regular';
     src: url(${SFProTextRegularEot}); /* IE9*/
     src: url(${SFProTextRegularEot}?#iefix) format("embedded-opentype"), /* IE6-IE8 */
     url(${SFProTextRegularWoff2}) format("woff2"), /* chrome、firefox */

@@ -32,6 +32,37 @@ export const Group = styled.div `
   width: 100%;
   margin-bottom: 56px;
 
+  input:focus ~ .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .tooltiptext {
+    visibility: hidden;
+    background-color: #DE4B4B;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 11px;
+    padding: 10px;
+  }
+
+  .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #DE4B4B transparent transparent transparent;
+  }
+
   input, select {
     font-family: Verdana;
     font-size: 17px;

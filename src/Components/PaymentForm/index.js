@@ -7,6 +7,8 @@ import axios from 'axios';
 import * as api from '../../Services/api/index';
 import CreditCardContext from '../../State/CreditCard/context'
 import * as CreditCardActions from '../../State/CreditCard/actions';
+import Tooltip from '../Tooltip'
+import iconTooltip from './Assets/tooltip.png';
 
 function PaymentForm(){
   const { setCreditCard } = useContext(CreditCardContext);
@@ -41,15 +43,21 @@ function PaymentForm(){
   })
 
   const handleFlip = useCallback((v) => {
+    formik.touched = { ...formik.touched, cvv: true };
     const value = { ...formik.values, flip: v };
     setCreditCard(CreditCardActions.send(value));
     return
-  }, [])
+  }, [formik.touched])
 
   useEffect(() => {
     const value = { ...formik.values, flip: formik.values.cvv ? true : false };
     setCreditCard(CreditCardActions.send(value));
   }, [formik.values]);
+
+  useEffect(() => {
+    if(formik.touched.cvv)
+    handleFlip(false)
+  }, [formik.touched]);
 
   return (
   <Form onSubmit={formik.handleSubmit} noValidate>
@@ -90,10 +98,9 @@ function PaymentForm(){
     className={formik.errors.cvv && formik.touched.cvv ? 'error' : ''}
     data-testid="cvv"
     onClick={() => handleFlip(true)}
-    onBlur={() => handleFlip(false)}
     />
     <span className="bar"></span>
-    <label id="cvv">CVV <span class="tooltiptext">Tooltip text</span></label>
+    <label id="cvv">CVV <img src={iconTooltip} /></label>
     {formik.touched.cvv ? (<small>{formik.errors.cvv}</small>) : null}
     </Group>
     </FieldGroup>

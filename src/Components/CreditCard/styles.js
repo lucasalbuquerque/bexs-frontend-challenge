@@ -161,9 +161,8 @@ export const Fields = styled.div`
     }
 
     .cardnumber p {
-      font-size: 25px;
+      font-size: 20px;
       overflow: hidden;
-      height: 35px;
     }
 
     .extrafields * {

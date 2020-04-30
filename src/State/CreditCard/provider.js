@@ -7,7 +7,7 @@ function Provider({ children }){
   const defaultValue = {
     type: 'DEFAULT',
     flip: false,
-    number: '* * * * * * * * * * * * * * * *',
+    number: '**** **** **** ****',
     name: 'NOME DO TITULAR',
     expiry: '00/00',
     cvv: '***'

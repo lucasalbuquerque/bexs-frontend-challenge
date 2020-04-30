@@ -32,7 +32,7 @@ function CreditCard() {
           </div>
           <div className="extrafields">
             <div className="name">
-              <p>{name.toString()}</p>
+              <p>{name}</p>
             </div>
             <div className="date">
               <p>{expiry}</p>
