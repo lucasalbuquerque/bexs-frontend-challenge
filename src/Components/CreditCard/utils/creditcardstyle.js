@@ -12,6 +12,11 @@ const CreditCardStyle = (option) => {
       { offset: '0.549', stopcolor: '#F79E1B' },
       { offset: '1', stopcolor: '#231F20' }
     ],
+    'AMEX': () => [
+      { offset: '0', stopcolor: '#108168' },
+      { offset: '0.200', stopcolor: '#108168' },
+      { offset: '1', stopcolor: '#108168' }
+    ],
     'DEFAULT': () => [
       { offset: '0', stopcolor: '#bfbfbf'},
       { offset: '0.337', stopcolor: '#a8a8a8'},

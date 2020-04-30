@@ -109,7 +109,7 @@ export const Fields = styled.div`
   text-indent: 20px;
 
   .company {
-    margin-bottom: 42px;
+    margin-bottom: 10%;
   }
 
   .cardnumber p {
