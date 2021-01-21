@@ -4,7 +4,7 @@
 
 ## CreditCard Component and Stepper Component
 
-I made these component without External Plugins in order to show my knowledge at Javascript.
+I made these component without External Plugins in order to show my knowledge about Javascript.
 
 ## Deployment
 
