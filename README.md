@@ -8,9 +8,9 @@ I made these component without External Plugins in order to show my knowledge ab
 
 ## Deployment
 
-If you want deploy with CI/CD at <a href="https://azure.microsoft.com/">Azure</a> i added the "pipeline.yml" to project.
+If you want to deploy using CI/CD at <a href="https://azure.microsoft.com/">Azure</a> i added the "pipeline.yml" to project.
 
-I wrote a article about Continuous Integration and Continuous Delivery in Medium, i will be very happy if you read :)
+I wrote an article about Continuous Integration and Continuous Delivery in Medium, i will be very happy if you read :)
 
 <a href="https://medium.com/@lucasalbuquerquejs/ci-cd-para-desenvolvedore-a-s-front-end-com-azure-devops-conceito-e-implementa%C3%A7%C3%A3o-a832b120762f">CI/CD para Desenvolvedore(a)s Front-end com Azure DevOps — Conceito e Implementação</a>
 
